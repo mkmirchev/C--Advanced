@@ -24,26 +24,23 @@ class MaximalSum
         {
             for (int k = 1; k <= searchRange[1]; k++)
             {
-                foreach (var arr in matrix)
+                searchMax.Add(matrix[i - 1][k - 1]);
+                searchMax.Add(matrix[i - 1][k]);
+                searchMax.Add(matrix[i - 1][k + 1]);
+                searchMax.Add(matrix[i][k - 1]);
+                searchMax.Add(matrix[i][k]);
+                searchMax.Add(matrix[i][k + 1]);
+                searchMax.Add(matrix[i + 1][k - 1]);
+                searchMax.Add(matrix[i + 1][k]);
+                searchMax.Add(matrix[i + 1][k + 1]);
+                currentSum = searchMax.Sum();
+                if (currentSum > maxSum)
                 {
-                    searchMax.Add(matrix[i - 1][k - 1]);
-                    searchMax.Add(matrix[i - 1][k]);
-                    searchMax.Add(matrix[i - 1][k + 1]);
-                    searchMax.Add(matrix[i][k - 1]);
-                    searchMax.Add(matrix[i][k]);
-                    searchMax.Add(matrix[i][k + 1]);
-                    searchMax.Add(matrix[i + 1][k - 1]);
-                    searchMax.Add(matrix[i + 1][k]);
-                    searchMax.Add(matrix[i + 1][k + 1]);
-                    currentSum = searchMax.Sum();
-                    if (currentSum > maxSum)
-                    {
-                        maxSum = currentSum;
-                        maxX = k;
-                        maxY = i;
-                    }
-                    searchMax = new List<int>();
+                    maxSum = currentSum;
+                    maxX = k;
+                    maxY = i;
                 }
+                searchMax = new List<int>();
             }  
         }
         Console.WriteLine("Sum = {0}", maxSum);
