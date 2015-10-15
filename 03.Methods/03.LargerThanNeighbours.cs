@@ -30,7 +30,7 @@ class LargerThanNeighbours
         }
         else if (currnetNumber == numbers.Length - 1)
         {
-            if (numbers[currnetNumber] > numbers[currnetNumber - 2])
+            if (numbers[currnetNumber] > numbers[currnetNumber - 1])
             {
                 isLarger = true;
             }
