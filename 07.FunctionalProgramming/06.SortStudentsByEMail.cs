@@ -20,14 +20,14 @@ namespace SortStudentsByEMail
                             where rgx.IsMatch(student.Email)
                             select student;
 
-            Console.WriteLine("LINQ");
+            Console.WriteLine("Lambda");
             foreach (var student in abv)
             {                
                 Console.WriteLine("{0} {1} {2}",student.FirstName, student.LastName, student.Email);
             }
 
             Console.WriteLine();
-            Console.WriteLine("Lambda");
+            Console.WriteLine("LINQ"");
             foreach (var student in abvEmails)
             {                               
                 Console.WriteLine("{0} {1} {2}", student.FirstName, student.LastName, student.Email);
